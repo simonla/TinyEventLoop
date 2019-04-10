@@ -10,14 +10,14 @@
 
 using std::list;
 
-class EventLoop {
+class EventQueue {
 private:
   list<Message> *_messages;
 
 public:
   void push(Message message);
 
-  EventLoop();
+  EventQueue();
 
   Message *poll();
 };

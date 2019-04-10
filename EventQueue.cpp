@@ -2,8 +2,8 @@
 // Created by MingyangZeng on 2019-04-08.
 //
 
-#include "EventLoop.h"
-void EventLoop::push(Message message) {
+#include "EventQueue.h"
+void EventQueue::push(Message message) {
   for (auto it = _messages->begin(); it != _messages->end(); it++) {
     if ((*it)._update_time > message._update_time) {
       _messages->insert(it, *it);
@@ -12,7 +12,7 @@ void EventLoop::push(Message message) {
   }
 }
 
-Message *EventLoop::poll() {
+Message *EventQueue::poll() {
   if (_messages->empty()) {
     return nullptr;
   }
@@ -21,4 +21,4 @@ Message *EventLoop::poll() {
   return front;
 }
 
-EventLoop::EventLoop() { _messages = new list<Message>; }
+EventQueue::EventQueue() { _messages = new list<Message>; }

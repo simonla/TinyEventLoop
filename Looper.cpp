@@ -3,8 +3,11 @@
 //
 
 #include "Looper.h"
+#include <sys/epoll.h>
 
-void Looper::prepare() { eventLoop = new EventLoop(); }
+void Looper::prepare() { eventLoop = new EventQueue();
+
+}
 
 void Looper::loop() {
   if (eventLoop == nullptr) {

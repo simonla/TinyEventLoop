@@ -5,11 +5,11 @@
 #ifndef EVENTLOOPDEMO_LOOPER_H
 #define EVENTLOOPDEMO_LOOPER_H
 
-#include "EventLoop.h"
+#include "EventQueue.h"
 
 class Looper {
 private:
-  EventLoop *eventLoop = nullptr;
+  EventQueue *eventLoop = nullptr;
   bool _is_Looping = true;
 
 public:
