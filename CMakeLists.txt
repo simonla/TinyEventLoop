@@ -3,4 +3,4 @@ project(EventLoopDemo)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(EventLoopDemo main.cpp Looper.cpp Looper.h EventQueue.cpp EventQueue.h Message.cpp Message.h)
+add_executable(EventLoopDemo main.cpp Looper.cpp Looper.h MessageQueue.cpp MessageQueue.h Message.cpp Message.h)

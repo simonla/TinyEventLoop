@@ -10,15 +10,13 @@
 
 using std::list;
 
-class EventQueue {
+class MessageQueue {
 private:
   list<Message> *_messages;
 
 public:
-  void push(Message message);
-
-  EventQueue();
-
+  void push(Message *message);
+  MessageQueue();
   Message *poll();
 };
 

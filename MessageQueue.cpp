@@ -2,17 +2,17 @@
 // Created by MingyangZeng on 2019-04-08.
 //
 
-#include "EventQueue.h"
-void EventQueue::push(Message message) {
+#include "MessageQueue.h"
+void MessageQueue::push(Message *message) {
   for (auto it = _messages->begin(); it != _messages->end(); it++) {
-    if ((*it)._update_time > message._update_time) {
+    if ((*it)._update_time > message->_update_time) {
       _messages->insert(it, *it);
       break;
     }
   }
 }
 
-Message *EventQueue::poll() {
+Message *MessageQueue::poll() {
   if (_messages->empty()) {
     return nullptr;
   }
@@ -21,4 +21,4 @@ Message *EventQueue::poll() {
   return front;
 }
 
-EventQueue::EventQueue() { _messages = new list<Message>; }
+MessageQueue::MessageQueue() { _messages = new list<Message>; }
