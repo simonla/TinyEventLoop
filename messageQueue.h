@@ -5,19 +5,21 @@
 #ifndef EVENTLOOPDEMO_EVENTLOOP_H
 #define EVENTLOOPDEMO_EVENTLOOP_H
 
-#include "Message.h"
+#include "message.h"
 #include <list>
 
 using std::list;
 
-class MessageQueue {
+class messageQueue {
 private:
-  list<Message> *_messages;
+  list<message> *_messages;
 
 public:
-  void push(Message *message);
-  MessageQueue();
-  Message *poll();
+  void push(message *message);
+  messageQueue();
+  message *peek();
+  message *poll();
+  int count();
 };
 
 #endif // EVENTLOOPDEMO_EVENTLOOP_H

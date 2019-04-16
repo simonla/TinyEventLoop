@@ -5,16 +5,19 @@
 #ifndef EVENTLOOPDEMO_MESSAGE_H
 #define EVENTLOOPDEMO_MESSAGE_H
 
-typedef void (*callback)();
+#include "message.h"
 #include <chrono>
 
-class Message {
+typedef void (*callback)(long);
+
+class message {
 private:
   callback _fun;
 
 public:
+  long _delay_time;
   long _update_time;
-  Message(callback fun, long delay_mills_time);
+  message(callback fun, long delay_mills_time);
   void run();
 };
 
